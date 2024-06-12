@@ -38,8 +38,9 @@ const NavOptions = () => {
         renderItem={({item})=>(
             <TouchableOpacity 
             onPress={()=>navigation.navigate(item.screen)}
+            disabled={!orgin}
             style={tw` p-2 pl-6 pb-8 bg-gray-200 m-2 mt-3 ml-0 w-40 `} >
-                <View>
+                <View style={tw`${!orgin && 'opacity-20'}`}>
                 <Image
                  source={{uri:item.image}}
                  style={{width:120,height:120,resizeMode:'contain'}}/>
