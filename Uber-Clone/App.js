@@ -1,13 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
+import { store } from './store';
+import HomeScreen from './Screens/HomeScreen';
+import { NativeWindStyleSheet } from 'nativewind'
+
+NativeWindStyleSheet.setOutput({
+  default:'native'
+})
 export default function App() {
   return (
-    <Provider store={store}>
-      <View style={styles.container}>
-        <Text>UBER</Text>
-        <StatusBar style="auto" />
-      </View>
+    <Provider store={store} >
+      <HomeScreen/>
     </Provider>
 
   );
