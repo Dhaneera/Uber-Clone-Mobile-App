@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView } from 'react-native'
-import React from 'react'
+import React, { useRef } from 'react'
 import tw from 'twrnc';
 import { useSelector } from 'react-redux';
 import { selectOrgin } from '../Slices/navSlice';
