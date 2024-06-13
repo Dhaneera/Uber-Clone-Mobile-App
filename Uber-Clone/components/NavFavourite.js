@@ -29,7 +29,7 @@ const NavFavourite = () => {
     <View style={[tw`bg-gray-200`,{height:0.5}]}/>
    )}
    renderItem={({item:{location,icon,destination}})=>(
-    <TouchableOpacity style={tw`flex-row item-center  pt-5`}>
+    <TouchableOpacity style={tw`flex-row pt-5`}>
         <Icon
         style={tw`m-4 justify center rounded-full bg-gray-300 p-3`}
         name={icon}

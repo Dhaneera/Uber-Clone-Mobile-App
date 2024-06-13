@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import tw from 'twrnc';
@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import {GOOGLE_API} from '@env'
 import { setDestination } from '../Slices/navSlice';
 import NavFavourite from './NavFavourite';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faCar, faCookieBite } from '@fortawesome/free-solid-svg-icons';
 
 const NavigationCard = () => {
     const navigation = useNavigation()
@@ -55,6 +57,18 @@ const NavigationCard = () => {
                         }} />
                 </View>
                 <NavFavourite/>
+            </View>
+            <View style={tw`justify-evenly flex-row mt-auto border-gray-100 `}>
+                <TouchableOpacity 
+                onPress={()=>navigation.navigate('RideOptionCard')}
+                style={tw`flex-row  justify-between bg-black w-24 px-5 py-3 rounded-full m-2  `}>
+                    <FontAwesomeIcon  icon={faCar} color='white' size={16} />
+                    <Text style={tw`text-white text-center`}>  Rides</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={tw`flex-row justify-between bg-black w-24 px-5 py-3 rounded-full m-2 `}>
+                    <FontAwesomeIcon  icon={faCookieBite} color='white' size={16}/>
+                    <Text style={tw`text-white text-center`}>  Eats</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )

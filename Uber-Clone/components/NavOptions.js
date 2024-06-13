@@ -39,7 +39,7 @@ const NavOptions = () => {
             <TouchableOpacity 
             onPress={()=>navigation.navigate(item.screen)}
             disabled={!orgin}
-            style={tw` p-2 pt-10 pl-6 pb-8 bg-gray-200 m-2 mt-3 ml-0 w-44 `} >
+            style={tw` p-2 pl-6 pb-8 bg-gray-200 m-2 mt-3 ml-0 w-44 `} >
                 <View style={tw`${!orgin && 'opacity-20'}`}>
                 <Image
                  source={{uri:item.image}}
