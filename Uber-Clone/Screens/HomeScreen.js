@@ -7,14 +7,15 @@ import {GOOGLE_API} from '@env'
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch } from 'react-redux';
 import { setDestination, setOrgin } from '../Slices/navSlice';
+import NavFavourite from '../components/NavFavourite';
 
 const HomeScreen = () => {
     const navigation=useNavigation();
     const dispatch=useDispatch();
 
     return (
-        <SafeAreaView style={tw` bg-white h-full`}>
-            <View style={tw`p-5`}>
+        <SafeAreaView style={tw` h-full w-full`}>
+            <View style={tw`p-5 `}>
                 <Image
                     style={{
                         width: 100,
@@ -52,6 +53,7 @@ const HomeScreen = () => {
                     minLength={2}
                     />
                 <NavOptions/>
+                <NavFavourite/>
             </View>
         </SafeAreaView>
     )
